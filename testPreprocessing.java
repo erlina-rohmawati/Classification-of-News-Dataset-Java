@@ -22,8 +22,8 @@ import java.util.stream.Stream;
 public class testPreprocessing {
 
     public static void main(String[] args) throws IOException {
-       data("\\Data latih2");
-       data("\\Data Uji2");
+       data("\\Data latih2"); //masukkan alamat data latih
+       data("\\Data Uji2"); //masukkan alamat sesuai data uji
     }
 
     public static String[][] data(String alamat) throws IOException {

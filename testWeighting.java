@@ -24,8 +24,8 @@ public class testWeighting {
 
     public static void main(String[] args) throws IOException {
         double[][] dataLatih, dataUji;
-        String alamatLatih = "D:\\Local Disk E\\A Informatika File\\Text Mining\\Text Mining\\Data\\Data latih2";
-        String alamatUji = "D:\\Local Disk E\\A Informatika File\\Text Mining\\Text Mining\\Data\\Data Uji2";
+        String alamatLatih = "...\\Data\\Data latih2"; //masukkan alamat sesuai data latih
+        String alamatUji = "...\\Data\\Data Uji2"; //masukkan alamat sesuai data uji
 
         weighting(alamatLatih, alamatUji);
 
@@ -37,9 +37,7 @@ public class testWeighting {
         testPreprocessing hasilPrepocessing = new testPreprocessing();
         testPreprocessing hasilPrepocessing2 = new testPreprocessing();
         String[][] inputKataLatih = hasilPrepocessing.data(alamatLatih);
-//        System.out.println("912102389274387498173474382787247318374627437189 latih "+hasilPrepocessing.data(alamatLatih).length);
         String[][] inputKataUji = hasilPrepocessing2.data(alamatUji);
-//        System.out.println("912102389274387498173474382787247318374627437189 uji "+hasilPrepocessing.data(alamatUji).length);
         dok1.setText(inputKataLatih, inputKataUji);
         System.out.println("\nTAHAP WEIGHTING");
         System.out.println("========================================================================================================= Hasil Tf =========================================================================================================");

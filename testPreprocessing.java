@@ -21,10 +21,9 @@ import java.util.stream.Stream;
 
 public class testPreprocessing {
 
-//    public static String[][] input = new String[4][4];
     public static void main(String[] args) throws IOException {
-//        data("\\Data latih2");
-//        data("\\Data Uji2");
+       data("\\Data latih2");
+       data("\\Data Uji2");
     }
 
     public static String[][] data(String alamat) throws IOException {
@@ -36,17 +35,8 @@ public class testPreprocessing {
 
         preprocessing dok1 = new preprocessing();
         List<String> input = new ArrayList<>();
-//        List<String> hasilCleaning = new ArrayList<String>();
         String[] hasilCleaning = new String[direktori.size()];
         String[] hasilCaseFolding = new String[direktori.size()];
-//        String[] hasilTokenisasi = new String[5];
-//        String[] hasilFiltering = new String[5];
-//        String[] hasilStemming = new String[5];
-
-//        for (int z = 0; z < direktori.size(); z++) {
-//            System.out.println(direktori.get(z));
-//        }
-
         System.out.println("TAHAP PREPROCESSING\n");
 
         System.out.println("================== CLEANING ==========================");
@@ -54,7 +44,6 @@ public class testPreprocessing {
             input.add(dok1.BacaFile(direktori.get(i)));
             if (input.get(i) != null) {
                 hasilCleaning[i] = dok1.cleaning(input.get(i));
-//                System.out.println(hasilCleaning[i]);
             }
         }
         for (Object array : hasilCleaning) {
@@ -93,8 +82,6 @@ public class testPreprocessing {
         System.out.println(hasilFiltering.size());
         for (int i = 0; i < hasilFiltering.size(); i++) {
             if (hasilFiltering.get(i) != null && hasilFiltering.get(i).length > 0) {
-
-//                System.out.println(Arrays.toString(hasilFiltering.get(i)));
                 try {
                     hasilStemming.add(dok1.Stemming(hasilFiltering.get(i)));
                 } catch (Exception e) {
@@ -112,8 +99,6 @@ public class testPreprocessing {
         for (int i = 0; i < hasilStemmingArray.length; i++) {
             hasilStemmingArray[i] = hasilStemming.get(i);
         }
-//        System.out.println("//////////////////////////////////////////////////////////////////////// " +hasilStemming.size());
-
         return hasilStemmingArray;
     }
 }

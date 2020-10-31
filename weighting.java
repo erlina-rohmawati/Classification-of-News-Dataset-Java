@@ -37,7 +37,7 @@ public class weighting {
             for (int j = 0; j < dok.length; j++) {
                 String kata = dok[j];
                 if (kata != null) {
-//                    System.out.println(kata);
+
                     if (freq.containsKey(kata)) {
                         int count = freq.get(kata);
                         count++;
@@ -50,8 +50,6 @@ public class weighting {
             }
             TFDok.add(freq);
         }
-//        System.out.println("banyaknya dokumen latih "+stem.length);
-
         return TFDok;
     }
 
@@ -69,12 +67,8 @@ public class weighting {
             for (int j = 0; j < dokUji.length; j++) {
                 String kata = dokUji[j];
                 for (int k = 0; k < feature.size(); k++) {
-//                    System.out.println(feature.get(k));
                     if (kata != null) {
                         if (kata.equals(feature.get(k))) {
-//                        System.out.println("=====================================================================================================");
-//                        System.out.println(kata);
-//                            System.out.println(kata);
                             if (freq.containsKey(kata)) {
                                 int count = freq.get(kata);
                                 count++;
@@ -89,8 +83,6 @@ public class weighting {
             }
             TFDokUji.add(freq);
         }
-//        System.out.println("banyaknya dokumen Uji "+stemUji.length);
-
         return TFDokUji;
     }
 

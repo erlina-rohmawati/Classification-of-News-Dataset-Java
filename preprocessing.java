@@ -29,19 +29,12 @@ public class preprocessing {
         File folder = new File(input);
         System.out.println("*************************************" + folder.getName());
         File[] listOfFiles = folder.listFiles();
-//        File[] direktori = folder.listFiles();
         String[] kategori = new String[3];
-//        String[] namaFile = new String[30];
-//        String[] kelas = new String[30];
 
         HashMap<String, String> file = new HashMap<>();
-//        System.out.println(folder.getName());
         List<String> direktori = new ArrayList<String>();
-//        Set<String> direktori = new HashSet<String>();
         for (int i = 0; i < listOfFiles.length; i++) {
             if (listOfFiles[i].isDirectory()) {
-//                kelas[i] = listOfFiles[i].getName();
-//                System.out.println("Directory " + listOfFiles[i].getName());
                 kategori[i] = listOfFiles[i].getName();
                 File folder2 = new File(listOfFiles[i].toString());
                 File[] listOfFiles2 = folder2.listFiles();
@@ -54,9 +47,6 @@ public class preprocessing {
                             kelasUji.add(kategori[i]);
                             namaFileUji.add(listOfFiles2[j].getName());
                         }
-                        
-//                        namaFile[j] = listOfFiles2[j].getName();
-//                        System.out.println(listOfFiles2[j].getName());
                         file.put(listOfFiles2[j].getName(), kategori[i]);
 
                         direktori.add(listOfFiles2[j].toString());
@@ -160,11 +150,8 @@ public class preprocessing {
         List<String> hasilFiltering = new ArrayList<>();
         for (int i = 0; i < dokumen.length; i++) {
             hasilFiltering.add(dokumen[i]);
-//            System.out.println(dokumen[i]);
             for (int j = 0; j < inputStoplistArray.length; j++) {
-//                System.out.println("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"+inputStoplistArray.length);
                 if (dokumen[i].equalsIgnoreCase(inputStoplistArray[j])) {
-//                    System.out.println(dokumen[i]+" apakah sama dg "+inputStoplistArray[j]);
                     hasilFiltering.remove(dokumen[i]);
                 } else if (dokumen[i].equalsIgnoreCase("")) {
                     hasilFiltering.remove(dokumen[i]);
@@ -193,15 +180,11 @@ public class preprocessing {
             kataStem = indonesianStemmer.findRootWord(sebelumStemming[i]);
             if (kataStem != null) {
                 aList.add(kataStem);
-//                    kataStem = kataStem+"99";
-//                setelahStemming[i] = kataStem;
-//                    setelahStemming[i] = "";
             } else {
                 aList.add(sebelumStemming[i]);
             }
         }
         String[] setelahStemming = aList.toArray(new String[aList.size()]);
-//        setelahStemming = aList.toArray();
         return setelahStemming;
     }
 
